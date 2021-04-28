@@ -15,6 +15,12 @@ var listaCognomi = ['Bianchi', 'Neri', 'Rossi', 'Verdi', 'Gialli'];
 listaCognomi.push(cognomeUtente);
 // stampa la lista in ordine alfabetico
 var ordineAlfabetico = listaCognomi.sort();
-var posizioneUtente = listaCognomi.indexOf(cognomeUtente);
+var posizioneUtente = Number(listaCognomi.indexOf(cognomeUtente)) + 1;
 console.log(ordineAlfabetico);
-console.log(posizioneUtente + 1);
+console.log(posizioneUtente);
+
+for (var i = 0; i < listaCognomi.length; i++) {
+    var content = document.getElementById("lista_cognomi").innerHTML;
+    document.getElementById("lista_cognomi").innerHTML = content + '<li>' + listaCognomi[i] + '</li>';
+}
+document.getElementById('pos_utente').innerHTML = cognomeUtente + ' sei in posizione ' + posizioneUtente;
