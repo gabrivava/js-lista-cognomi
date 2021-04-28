@@ -9,13 +9,14 @@ Consultiamo la documentazione W3Schools o MDN per trovare i metodi javascript ch
 
 // cognome utente
 var cognomeUtente = prompt('inserisci il tuo cognome');
+var cognomeUtenteCorretto = cognomeUtente.charAt(0).toUpperCase() + cognomeUtente.slice(1);
 // lista cognimi
 var listaCognomi = ['Bianchi', 'Neri', 'Rossi', 'Verdi', 'Gialli'];
 //aggiungi cognome alla lista
-listaCognomi.push(cognomeUtente);
+listaCognomi.push(cognomeUtenteCorretto);
 // stampa la lista in ordine alfabetico
 var ordineAlfabetico = listaCognomi.sort();
-var posizioneUtente = Number(listaCognomi.indexOf(cognomeUtente)) + 1;
+var posizioneUtente = Number(listaCognomi.indexOf(cognomeUtenteCorretto)) + 1;
 console.log(ordineAlfabetico);
 console.log(posizioneUtente);
 
@@ -23,4 +24,4 @@ for (var i = 0; i < listaCognomi.length; i++) {
     var content = document.getElementById("lista_cognomi").innerHTML;
     document.getElementById("lista_cognomi").innerHTML = content + '<li>' + listaCognomi[i] + '</li>';
 }
-document.getElementById('pos_utente').innerHTML = cognomeUtente + ' sei in posizione ' + posizioneUtente;
+document.getElementById('pos_utente').innerHTML = cognomeUtenteCorretto + ' sei in posizione ' + posizioneUtente;
